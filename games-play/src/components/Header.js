@@ -1,14 +1,16 @@
-const Header = () => {
+const Header = ({
+    navigationChangeHandler,
+
+}) => {
     const onHeaderClick = (ev) => {
         ev.preventDefault();
 
-        if (ev.target.tagName =='A') {
-            let url= new URL(ev.target.href)
-
-            console.log(url.pathname);
+        if (ev.target.tagName == 'A') {
+            let url = new URL(ev.target.href)
+            navigationChangeHandler(url.pathname)
         }
     }
-    
+
     return (
         <header onClick={onHeaderClick} >
             <h1><a className="home" href="/home">GamesPlay</a></h1>
