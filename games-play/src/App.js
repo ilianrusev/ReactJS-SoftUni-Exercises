@@ -11,6 +11,7 @@ import GameDetails from "./components/GameDetails";
 
 
 function App() {
+
   const [page, setPage] = useState('/home')
 
   const navigationChangeHandler = (path) => {
@@ -26,7 +27,7 @@ function App() {
     let argument = pathNames[2]
 
     const routes = {
-      'home': <WelcomeWorld />,
+      'home': <WelcomeWorld navigationChangeHandler={navigationChangeHandler} />,
       'games': <GameCatalog navigationChangeHandler={navigationChangeHandler} />,
       'create': <CreateGame />,
       'login': <Login />,

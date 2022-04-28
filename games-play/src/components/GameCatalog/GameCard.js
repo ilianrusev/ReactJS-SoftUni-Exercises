@@ -2,6 +2,7 @@ const GameCard = ({
     game,
     navigationChangeHandler,
 }) => {
+
     const onDetailsClick = (ev) => {
         ev.preventDefault();
         navigationChangeHandler(`/details/${game._id}`)

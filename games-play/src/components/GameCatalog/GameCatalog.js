@@ -6,6 +6,7 @@ import GameCard from "./GameCard";
 const GameCatalog = ({
     navigationChangeHandler,
 }) => {
+
     const [games, setGames] = useState([]);
 
     useEffect(() => {
