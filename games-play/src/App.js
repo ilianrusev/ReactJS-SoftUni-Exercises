@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import WelcomeWorld from "./components/WelcomeWorld";
 import GameCatalog from "./components/GameCatalog";
 import CreateGame from "./components/CreateGame";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
     '/home': <WelcomeWorld />,
     '/games': <GameCatalog />,
     '/create': <CreateGame />,
+    '/login': <Login />,
+    '/register': <Register />,
   };
 
   const navigationChangeHandler = (path) => {
