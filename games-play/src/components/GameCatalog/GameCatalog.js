@@ -17,9 +17,11 @@ const GameCatalog = () => {
         <section id="catalog-page">
             <h1>All Games</h1>
 
-            {games.map(game => <GameCard game={game} />)}
+            {games.length > 0
+                ? games.map(game => <GameCard key={game._id} game={game} />)
+                : <h3 className="no-articles">No games yet</h3>
+            }
 
-            <h3 className="no-articles">No articles yet</h3>
         </section>
     )
 }
