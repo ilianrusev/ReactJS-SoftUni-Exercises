@@ -1,8 +1,16 @@
 import Header from "./components/Header";
 import WelcomeWorld from "./components/WelcomeWorld";
+import GameCatalog from "./components/GameCatalog";
+import CreateGame from "./components/CreateGame";
 
 
 function App() {
+  const routes = {
+    '/home': WelcomeWorld,
+    '/games': GameCatalog,
+    '/create': CreateGame,
+  };
+
   return (
 
     <div id="box">
@@ -13,11 +21,6 @@ function App() {
         <WelcomeWorld />
       </main>
 
-      
-      
-
-      
-      
     </div>
 
   );
