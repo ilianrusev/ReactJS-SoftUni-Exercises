@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+This project is using SoftUni practice server! To run it first go to 'server' folder, and then type 'node server.js' in the console.
+
 In the project directory, you can run:
 
 ### `npm start`
