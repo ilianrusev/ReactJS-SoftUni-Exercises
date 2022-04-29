@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 import Header from "./components/Header";
 import WelcomeWorld from "./components/WelcomeWorld";
@@ -12,42 +12,22 @@ import GameDetails from "./components/GameDetails";
 
 function App() {
 
-  const [page, setPage] = useState('/home')
-
-  const navigationChangeHandler = (path) => {
-    setPage(path)
-  }
-
-
-
-  const router = (path) => {
-    let pathNames = path.split('/');
-
-    let rootPath = pathNames[1];
-    let argument = pathNames[2]
-
-    const routes = {
-      'home': <WelcomeWorld navigationChangeHandler={navigationChangeHandler} />,
-      'games': <GameCatalog navigationChangeHandler={navigationChangeHandler} />,
-      'create': <CreateGame />,
-      'login': <Login />,
-      'register': <Register />,
-      'details': <GameDetails id={argument} />,
-    };
-
-    return routes[rootPath]
-  }
-
-
-
   return (
 
     <div id="box">
 
-      <Header navigationChangeHandler={navigationChangeHandler} />
+      <Header />
 
       <main id="main-content">
-        {router(page) || <ErrorPage />}
+        <Routes>
+          <Route path="/" element={<WelcomeWorld />} />
+          <Route path="/home" element={<WelcomeWorld />} />
+          <Route path="/games" element={<GameCatalog />} />
+          <Route path="/create" element={<CreateGame />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/games/:gameId" element={<GameDetails />} />
+        </Routes>
       </main>
 
     </div>

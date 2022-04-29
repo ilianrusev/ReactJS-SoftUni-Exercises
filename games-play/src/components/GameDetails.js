@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import * as gameService from '../services/gameService'
 
-const GameDetails = ({
-    id,
-}) => {
+const GameDetails = () => {
+    let id = useParams().gameId
+    
     const [game, setGame] = useState([])
 
     useEffect(() => {  //the correct way to use async in useEffect if you do not want to use ".then"

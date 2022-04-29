@@ -4,7 +4,6 @@ import * as gameService from "../../services/gameService";
 import GameCard from "./GameCard";
 
 const GameCatalog = ({
-    navigationChangeHandler,
 }) => {
 
     const [games, setGames] = useState([]);
@@ -21,7 +20,7 @@ const GameCatalog = ({
             <h1>All Games</h1>
 
             {games.length > 0
-                ? games.map(game => <GameCard key={game._id} game={game} navigationChangeHandler={navigationChangeHandler} />)
+                ? games.map(game => <GameCard key={game._id} game={game}  />)
                 : <h3 className="no-articles">No games yet</h3>
             }
 
