@@ -7,7 +7,7 @@ const GameCard = ({
     return (
         <div className="allGames">
             <div className="allGames-info">
-                <img src={game.imageUrl} />
+                <img src={game.imageUrl}  alt="img" />
                 <h6>{game.category}</h6>
                 <h2>{game.title}</h2>
                 <Link to={`/games/${game._id}`} className="details-button">Details</Link>

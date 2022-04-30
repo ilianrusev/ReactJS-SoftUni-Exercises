@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 import * as gameService from "../../services/gameService";
 import GameCard from "./GameCard";
 
-const GameCatalog = ({
-}) => {
+const GameCatalog = () => {
 
     const [games, setGames] = useState([]);
 

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import * as gameService from '../services/gameService'
 
 const GameDetails = () => {
     let id = useParams().gameId
-    
+
     const [game, setGame] = useState([])
 
     useEffect(() => {  //the correct way to use async in useEffect if you do not want to use ".then"
@@ -28,7 +28,7 @@ const GameDetails = () => {
             <div className="info-section">
 
                 <div className="game-header">
-                    <img className="game-img" src={game.imageUrl} />
+                    <img className="game-img" src={game.imageUrl}  alt="img" />
                     <h1>{game.title}</h1>
                     <span className="levels">MaxLevel: {game.maxLevel}</span>
                     <p className="type">{game.category}</p>
@@ -52,20 +52,19 @@ const GameDetails = () => {
                 </div>
 
                 <div className="buttons">
-                    <a href="#" className="button">Edit</a>
-                    <a href="#" className="button">Delete</a>
+                    <Link to="#" className="button">Edit</Link>
+                    <Link to="#" className="button">Delete</Link>
                 </div>
             </div>
 
-            <article className="create-comment">
-                <label>Add new comment:</label>
-                <form className="form">
-                    <textarea name="comment" placeholder="Comment......"></textarea>
-                    <input className="btn submit" type="submit" value="Add Comment" />
-                </form>
-            </article>
+            <article className="create-comment" />
+            <label>Add new comment:</label>
+            <form className="form">
+                <textarea name="comment" placeholder="Comment......"></textarea>
+                <input className="btn submit" type="submit" value="Add Comment" />
+            </form>
 
-        </section>
+        </section >
     )
 }
 

@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import {  Route, Routes } from "react-router-dom";
 
 import Header from "./components/Header";
 import WelcomeWorld from "./components/WelcomeWorld";
@@ -27,6 +27,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/games/:gameId" element={<GameDetails />} />
+          <Route path="*" element={<ErrorPage/>} />
+
+
         </Routes>
       </main>
 
